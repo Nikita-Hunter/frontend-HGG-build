@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Hot Ground Gym</title>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <div class="header-top">
+    <div class="header-top__container container">
+      <div class="header-top__inner">
+        <div class="header-top__geo">
+          <div class="header-top__geo--block">
+            <img src="img/clock.svg" alt="">
+            <span>Summer Hours: Mon-Fri 8am-8pm, Sat 9am-5pm</span>
+          </div>
+          <div class="header-top__geo--block">
+            <img src="img/marker.svg" alt="">
+            <span>Arlington Heights, IL</span>
+          </div>
+          <div class="header-top__geo--block">
+            <img src="img/marker.svg" alt="">
+            <span>1950 N Highway 45, Libertyville</span>
+          </div>
+          <div class="header-top__geo--block">
+            <img src="img/phone.svg" alt="">
+            <a href="tel:8472278404" class="link-reset">847-227-8404</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <img class="header__logo--icon" src="img/logo.svg" alt="Logo Hot Ground Gym">
+        </a>
+        <nav class="navbar">
+          <ul x-data="{ open: false }" class="list-reset navbar__list">
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">About us</a></li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Classes</a></li>
+            <li @mouseover="open = true" class="navbar__item">
+              <a href="/" class="navbar__link link-reset">Camps <i class="fas fa-chevron-down"></i></a>
+              <ul x-show="open" @mouseout="open = false" class="list-reset drop-down">
+                <li class="drop-down__item">
+                  <a href="/" class="drop-down__link link-reset">Summer Camp</a>  
+                </li>
+                <li class="drop-down__item"><a href="/" class="drop-down__link link-reset">Winter Break Camp</a></li>
+                <li class="drop-down__item"><a href="/" class="drop-down__link link-reset">Spring Break Camp</a></li>
+                <li class="drop-down__item"><a href="/" class="drop-down__link link-reset">No school days + one day camp</a></li>
+              </ul>
+            </li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Birthday Party</a></li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Team Building</a></li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Reviews</a></li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Blog</a></li>
+            <li class="navbar__item"><a href="/" class="navbar__link link-reset">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="right-block">
+          <a href="#" class="link-reset btn-primary">Contact US</a>
+          <a href="tel:8472278404" class="link-reset phone-number">
+            <img src="img/phone-mobile.svg" alt="">
+          </a>
+          <a href="#" id="menuBtn" class="menu-btn link-reset">
+            <img src="img/burger.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar-mobile" id="navMobile">
+    <ul class="list-reset navbar-mobile__list">
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">about us</a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">Classes</a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="#" id="openDropDown" class="link-reset navbar-mobile__link">Camps <i class="fas fa-chevron-right"></i></a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">Birthday Party</a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">Team Building</a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">Reviews</a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="" class="link-reset navbar-mobile__link">Blog</a>
+      </li>
+      <ul class="list-reset" id="mobileDropDown">
+        <li><a href="#" id="closeDropDown" class="link-reset"><i class="fas fa-chevron-left"></i>Return to the menu</a></li>
+        <li><a href="" class="link-reset">Camps Overview</a></li>
+        <li><a href="" class="link-reset">Summer Camp</a></li>
+        <li><a href="" class="link-reset">Winter Break Camp</a></li>
+        <li><a href="" class="link-reset">Spring Break Camp</a></li>
+        <li><a href="" class="link-reset">No School Days + One Day Camp</a></li>
+      </ul>
+    </ul>
+    <div class="navbar-mobile__contacts">
+      <div class="navbar-mobile__contacts--geo">
+        <img src="img/clock.svg" alt="">
+        <span>Summer Hours: Mon-Fri 8am-8pm</span>
+      </div>
+      <div class="navbar-mobile__contacts--geo">
+        <img src="img/marker.svg" alt="">
+        <span>Arlington Heights, IL</span>
+      </div>
+      <div class="navbar-mobile__contacts--geo">
+        <img src="img/marker.svg" alt="">
+            <span>1950 N Highway 45, Libertyville</span>
+      </div>
+      <div class="navbar-mobile__contacts--geo">
+        <img src="img/phone.svg" alt="">
+        <a href="tel:8472278404" class="link-reset">847-227-8404</a>
+      </div>
+    </div>
+    <div class="navbar-mobile__social">
+      <a href="" target="_blank" class="link-reset">
+        <img src="img/facebook.svg" alt="">
+      </a>
+      <a href="" target="_blank" class="link-reset">
+        <img src="img/youtube.svg" alt="">
+      </a>
+      <a href="" target="_blank" class="link-reset">
+        <img src="img/instagram.svg" alt="">
+      </a>
+    </div>
+  </nav>
+  <main class="main">
+    <section class="hero" style="background-image: url('img/hero-bg.jpg');">
+      <div class="hero__container container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <div class="hero__title">
+              <h1>Obstacle Courses / Kids Birthday Parties / Private Team Building Events in Arlington Heights, IL              </h1>
+            </div>
+            <div class="hero__param">
+              <p>Here at Hot Ground Gym® (HGG) we're revolutionizing the way kids stay active, learn, and grow. Our indoor obstacle courses and team-building challenges are designed to engage kids physically and mentally and to stimulate their character, in a super unique and fun environment.</p>
+            </div>
+            <div class="hero__buttons">
+              <a href="#" class="btn-primary btn-hero">
+                Contact US
+              </a>
+              <a class="btn-transparent btn-hero venobox" data-vbtype="video" data-autoplay="true" href="https://youtu.be/tZeMfF45Gmc">
+                Watch the video <i class="fas fa-caret-right"></i>
+              </a>
+            </div>
+            <ul class="list-reset icon__list">
+              <li class="icon__item">
+                <img src="img/icon-hero-1.png" alt="" class="icon__item--img">
+              </li>
+              <li class="icon__item">
+                <img src="img/icon-hero-2.png" alt="" class="icon__item--img">
+              </li>
+              <li class="icon__item">
+                <img src="img/icon-hero-3.png" alt="" class="icon__item--img">
+              </li>
+               <li class="icon__item">
+                <img src="img/icon-hero-4.png" alt="" class="icon__item--img">
+              </li>
+              <li class="icon__item">
+                <img src="img/icon-hero-5.png" alt="" class="icon__item--img">
+              </li>
+              <li class="icon__item">
+                <img src="img/icon-hero-6.png" alt="" class="icon__item--img">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="about__container container">
+        <div class="about__inner">
+          <div class="about__column">
+            <div class="about__column--left">
+              <div class="about__title">
+                <h2>Recreation Center for Kids near Chicago</h2>
+              </div>
+              <div class="about__subtitle">
+                <h3>The military background of our veteran founders sparked the unique idea for Hot Ground Gym. </h3>
+              </div>
+            </div>
+            <div class="about__column--right">
+              <div class="about__param">
+                <p>Our kids’ fitness approach is ideal for building physical and mental character while providing them with engaging indoor children’s activities that they’ll genuinely enjoy. Your kids will leave each session with strengthened problem-solving skills and help them build self-confidence. Our kids’ gym is perfect for families in Arlington Heights and nearby areas such as Palatine, Wheeling, and Buffalo Grove.</p>
+              </div>
+              <a href="" class="link-reset link-more">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="carousel">
+      <div class="carousel__inner">
+        <div class="owl-carousel">
+          <div class="owl-carousel__item">
+            <div class="owl-carousel__button">
+              <a href="https://youtu.be/Wctg8f15VV4" class="venobox btn-primary btn-play" data-vbtype="video" data-autoplay="true">play</a>
+            </div>
+            <img class="owl-carousel__item--img" src="img/carousel-img-1.png" alt="">
+          </div>
+          <div class="owl-carousel__item">
+            <div class="owl-carousel__button">
+              <a href="https://youtu.be/Wctg8f15VV4" class="venobox btn-primary btn-play" data-vbtype="video" data-autoplay="true">play</a>
+            </div>
+            <img class="owl-carousel__item--img" src="img/carousel-img-1.png" alt="">
+          </div>
+          <div class="owl-carousel__item">
+            <div class="owl-carousel__button">
+              <a href="https://youtu.be/Wctg8f15VV4" class="venobox btn-primary btn-play" data-vbtype="video" data-autoplay="true">play</a>
+            </div>
+            <img class="owl-carousel__item--img" src="img/carousel-img-1.png" alt="">
+          </div>
+          <div class="owl-carousel__item">
+            <div class="owl-carousel__button">
+              <a href="https://youtu.be/Wctg8f15VV4" class="venobox btn-primary btn-play" data-vbtype="video" data-autoplay="true">play</a>
+            </div>
+            <img class="owl-carousel__item--img" src="img/carousel-img-1.png" alt="">
+          </div>
+          <div class="owl-carousel__item">
+            <div class="owl-carousel__button">
+              <a href="https://youtu.be/Wctg8f15VV4" class="venobox btn-primary btn-play" data-vbtype="video" data-autoplay="true">play</a>
+            </div>
+            <img class="owl-carousel__item--img" src="img/carousel-img-1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
